@@ -20,4 +20,9 @@ public class Constants {
     public static final String FANOUT_QUEUE1 = "fanout.queue1";
     public static final String FANOUT_QUEUE2 = "fanout.queue2";
 
+    //路由模式
+    public static final String DIRECT_EXCHANGE = "direct.exchange";
+    public static final String DIRECT_QUEUE1 = "direct.queue1";
+    public static final String DIRECT_QUEUE2 = "direct.queue2";
+
 }
