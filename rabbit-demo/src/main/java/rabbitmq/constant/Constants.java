@@ -25,4 +25,8 @@ public class Constants {
     public static final String DIRECT_QUEUE1 = "direct.queue1";
     public static final String DIRECT_QUEUE2 = "direct.queue2";
 
+    //通配符模式
+    public static final String TOPICS_EXCHANGE = "topics.exchange";
+    public static final String TOPICS_QUEUE1 = "topics.queue1";
+    public static final String TOPICS_QUEUE2 = "topics.queue2";
 }
