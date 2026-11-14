@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="33867a79-9cfd-4588-9e11-1c4614717de2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logistics-server/src/main/java/com/rabbit/logisticsserver/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logistics-server/src/main/java/com/rabbit/logisticsserver/listener/OrderListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-server/src/main/java/com/rabbit/orderserver/config/OrderConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-server/src/main/java/com/rabbit/orderserver/controller/OrderController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="14" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Maven\.m2\repository" />
+        <option name="userSettingsFile" value="D:\Maven\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="9.148255532505648E-7" />
+      <entry key="MS500" value="0.06198229567114633" />
+      <entry key="S2" value="0.4991953925655637" />
+      <entry key="S5" value="0.7925229898452383" />
+      <entry key="S10" value="1.0580577255312507" />
+      <entry key="S30" value="1.5274488241491402" />
+      <entry key="S60" value="1.7412347432829272" />
+      <entry key="M2" value="2.176737245105623" />
+      <entry key="M5" value="5.870545753972578" />
+      <entry key="M10" value="11.55334261492504" />
+      <entry key="M15" value="14.956593661643874" />
+      <entry key="M30" value="19.612573406720813" />
+      <entry key="H1" value="22.553348263637748" />
+      <entry key="H2" value="24.208186693089214" />
+      <entry key="H4" value="25.086266158476075" />
+      <entry key="D1" value="25.84517274475244" />
+      <entry key="W1" value="25.97781882970047" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000000000000007" />
+      <entry key="S2" value="1.0002903338922202" />
+      <entry key="S5" value="1.0385822164047573" />
+      <entry key="S10" value="1.2065841032116105" />
+      <entry key="S30" value="1.799579556634923" />
+      <entry key="S60" value="2.2395692595657866" />
+      <entry key="M2" value="2.951864859056177" />
+      <entry key="M5" value="7.438806341494242" />
+      <entry key="M10" value="13.951441084323047" />
+      <entry key="M15" value="17.778506410502562" />
+      <entry key="M30" value="22.961254100029088" />
+      <entry key="H1" value="26.210684250561282" />
+      <entry key="H2" value="28.03241861804571" />
+      <entry key="H4" value="28.997249754376917" />
+      <entry key="D1" value="29.830177415559056" />
+      <entry key="W1" value="29.975672713560602" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="3.3931765697012316E-5" />
+      <entry key="MS500" value="0.16473775527819784" />
+      <entry key="S2" value="1.0370314086434627" />
+      <entry key="S5" value="1.6005730699894787" />
+      <entry key="S10" value="2.126348176313442" />
+      <entry key="S30" value="3.262057895821383" />
+      <entry key="S60" value="3.9421422927484153" />
+      <entry key="M2" value="5.104133921733465" />
+      <entry key="M5" value="13.286009199595346" />
+      <entry key="M10" value="25.483273618769516" />
+      <entry key="M15" value="32.71691425365585" />
+      <entry key="M30" value="42.562134743498625" />
+      <entry key="H1" value="48.75737217282124" />
+      <entry key="H2" value="52.23704713351206" />
+      <entry key="H4" value="54.081676467034384" />
+      <entry key="D1" value="55.67503490370867" />
+      <entry key="W1" value="55.95344628996976" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3M5dh3GAaPvLtHKBl73bQhzZfEu" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.OrderServerApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.LogisticsServerApplication">
+    <configuration name="LogisticsServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="logistics-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rabbit.logisticsserver.LogisticsServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="order-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.rabbit.orderserver.OrderServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rabbit.orderserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.OrderServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33867a79-9cfd-4588-9e11-1c4614717de2" name="Changes" comment="" />
+      <created>1783434173064</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1783434173064</updated>
+      <workItem from="1794644479577" duration="869000" />
+      <workItem from="1794645889885" duration="1249000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
