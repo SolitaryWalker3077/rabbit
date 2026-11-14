@@ -21,5 +21,10 @@ public class ProducerController {
         return "发送成功";
     }
 
+    @RequestMapping("/fanout")
+    public String fanout() {
+        rabbitTemplate.convertAndSend(Constants.FANOUT_EXCHANGE,"","hello spring amqp : fanout...");
+        return "发送成功";
+    }
 
 }
