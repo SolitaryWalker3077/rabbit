@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: rabbitmq-spring-boot
+  rabbitmq:
+    host: 43.140.242.83
+    port: 5672 #默认为5672
+    username: admin
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: study_rabbit #默认为/
+
