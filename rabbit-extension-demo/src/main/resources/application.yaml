@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: rabbit-extension-demo
+  rabbitmq:
+    host: 43.140.242.83
+    port: 5672 #默认为5672
+    username: admin
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: extension #默认为/
+    listener:
+      simple:
+        # mode: none #消息接收确认                 # 消费者正确处理 : MQ删除相应消息    消费者处理异常 : MQ删除相应消息
+        #acknowledge-mode: auto #消息接收确认(默认)      # 消费者正确处理 : 消息自动确认       消费者处理异常: 消息会不断的重试
+        acknowledge-mode: manual #消息接收确认
