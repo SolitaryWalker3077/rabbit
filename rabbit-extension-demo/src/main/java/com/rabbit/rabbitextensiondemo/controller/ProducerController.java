@@ -55,4 +55,11 @@ public class ProducerController {
         return "消息发送成功";
     }
 
+
+    @RequestMapping("/retry")
+    public String retry() {
+        rabbitTemplate.convertAndSend(Constants.PRES_EXCHANGE,"retry","retry test...");
+        return "消息发送成功";
+    }
+
 }
