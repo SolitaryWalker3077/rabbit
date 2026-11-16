@@ -98,7 +98,7 @@ public class RabbitMQConfig {
     //重试机制
     @Bean("retryQueue")
     public Queue retryQueue() {
-        return QueueBuilder.durable(Constants.PRES_QUEUE).build();
+        return QueueBuilder.durable(Constants.RETRY_QUEUE).build();
     }
 
     @Bean("retryExchange")

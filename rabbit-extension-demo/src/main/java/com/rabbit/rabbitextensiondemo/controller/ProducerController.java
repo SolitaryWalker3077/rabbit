@@ -58,7 +58,7 @@ public class ProducerController {
 
     @RequestMapping("/retry")
     public String retry() {
-        rabbitTemplate.convertAndSend(Constants.PRES_EXCHANGE,"retry","retry test...");
+        rabbitTemplate.convertAndSend(Constants.RETRY_EXCHANGE,"retry","retry test...");
         return "消息发送成功";
     }
 
