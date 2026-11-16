@@ -12,3 +12,4 @@ spring:
         # mode: none #消息接收确认                 # 消费者正确处理 : MQ删除相应消息    消费者处理异常 : MQ删除相应消息
         #acknowledge-mode: auto #消息接收确认(默认)      # 消费者正确处理 : 消息自动确认       消费者处理异常: 消息会不断的重试
         acknowledge-mode: manual #消息接收确认
+    publisher-confirm-type: correlated

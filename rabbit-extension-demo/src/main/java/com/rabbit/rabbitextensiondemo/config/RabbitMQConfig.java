@@ -13,12 +13,27 @@ public class RabbitMQConfig {
     //声明一个队列
     @Bean("ackQueue")
     public Queue ackQueue() {
+        /**
+         * public static QueueBuilder durable(String name) {
+         * 		return new QueueBuilder(name).setDurable();
+         * 	    }
+         *
+         * private QueueBuilder setDurable() {
+         * 		this.durable = true;
+         * 		return this;
+         * 	    }
+         * 所以默认用durable是创建持久化队列
+         * */
         return QueueBuilder.durable(Constants.ACK_QUEUE).build();
+        //return QueueBuilder.nonDurable(Constants.ACK_QUEUE).build();   //创建非持久化队列
     }
 
     @Bean("directExchange")
     public DirectExchange directExchange() {
+        // 默认是持久化的交换机
         return ExchangeBuilder.directExchange(Constants.ACK_EXCHANGE).build();
+        //设置非持久化的交换机,将durable的参数改为false
+        //return ExchangeBuilder.directExchange(Constants.ACK_EXCHANGE).durable(false).build();
     }
 
 
@@ -51,6 +66,33 @@ public class RabbitMQConfig {
         return BindingBuilder.bind(queue).to(directExchange).with("ack");
     }
 
+    //非持久化
+    @Bean("presQueue")
+    public Queue presQueue() {
+        return QueueBuilder.nonDurable(Constants.PRES_QUEUE).build();
+    }
 
+    @Bean("presExchange")
+    public DirectExchange presExchange() {
+        return ExchangeBuilder.directExchange(Constants.PRES_EXCHANGE).durable(false).build();
+    }
+
+    public Binding presBinding(@Qualifier("presQueue") Queue queue,@Qualifier("presExchange") Exchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with("pres").noargs();
+    }
+
+    //发送方确认
+    @Bean("confirmQueue")
+    public Queue confirmQueue(){
+        return QueueBuilder.durable(Constants.CONFIRM_QUEUE).build();
+    }
+    @Bean("confirmExchange")
+    public DirectExchange confirmExchange(){
+        return ExchangeBuilder.directExchange(Constants.CONFIRM_EXCHANGE).build();
+    }
+    @Bean("confirmBinding")
+    public Binding confirmBinding(@Qualifier("confirmQueue") Queue queue, @Qualifier("confirmExchange") Exchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with("confirm").noargs();
+    }
 
 }
