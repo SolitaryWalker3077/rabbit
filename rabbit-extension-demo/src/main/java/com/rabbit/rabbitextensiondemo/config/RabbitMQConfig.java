@@ -137,5 +137,8 @@ public class RabbitMQConfig {
         return BindingBuilder.bind(queue).to(exchange).with("ttl").noargs();
     }
 
-
+    @Bean("transQueue")
+    public Queue transQueue(){
+        return QueueBuilder.durable(Constants.TRANS_QUEUE).build();
+    }
 }

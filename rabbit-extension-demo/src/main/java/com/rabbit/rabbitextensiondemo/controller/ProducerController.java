@@ -12,6 +12,7 @@ import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,9 @@ public class ProducerController {
 
     @Resource(name = "confirmRabbitTemplate")
     private RabbitTemplate confirmRabbitTemplate;
+
+    @Resource(name = "transRabbitTemplate")
+    private RabbitTemplate transRabbitTemplate;
 
     @RequestMapping("/ack")
     public String ack() {
@@ -154,4 +158,14 @@ public class ProducerController {
         return "消息发送成功";
     }
 
+
+    @Transactional
+    @RequestMapping("/trans")
+    public String trans(){
+        System.out.println("trans test...");
+        transRabbitTemplate.convertAndSend("",Constants.TRANS_QUEUE, "trans test 1...");
+//        int num = 5/0;
+        transRabbitTemplate.convertAndSend("",Constants.TRANS_QUEUE, "trans test 2...");
+        return "消息发送成功";
+    }
 }

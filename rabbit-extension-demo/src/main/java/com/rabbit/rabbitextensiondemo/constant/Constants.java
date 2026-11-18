@@ -33,4 +33,7 @@ public class Constants {
     public static final String DELAY_QUEUE = "delay.queue";
     public static final String DELAY_EXCHANGE = "delay.exchange";
 
+    //事务
+    public static final String TRANS_QUEUE = "trans.queue";
+
 }
