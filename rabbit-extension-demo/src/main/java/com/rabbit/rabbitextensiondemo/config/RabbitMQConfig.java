@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 @Configuration
 public class RabbitMQConfig {
 
@@ -108,6 +109,32 @@ public class RabbitMQConfig {
     @Bean("retryBinding")
     public Binding retryBinding(@Qualifier("retryQueue") Queue queue, @Qualifier("retryExchange") Exchange exchange){
         return BindingBuilder.bind(queue).to(exchange).with("retry").noargs();
+    }
+
+    //ttl
+    //未设置ttl
+    @Bean("ttlQueue")
+    public Queue ttlQueue() {
+        return QueueBuilder.durable(Constants.TTL_QUEUE).build();
+    }
+    //设置了ttl
+    @Bean("ttlQueue2")
+    public Queue ttlQueue2() {
+        return QueueBuilder.durable(Constants.TTL_QUEUE2).ttl(20000).build(); //ttl 设置20s
+
+    }
+    @Bean("ttlExchange")
+    public DirectExchange ttlExchange() {
+        return ExchangeBuilder.directExchange(Constants.TTL_EXCHANGE).build();
+    }
+    @Bean("ttlBinding")
+    public Binding ttlBinding(@Qualifier("ttlQueue") Queue queue ,@Qualifier("ttlExchange") Exchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with("ttl").noargs();
+    }
+
+    @Bean("ttlBinding2")
+    public Binding ttlBinding2(@Qualifier("ttlQueue2") Queue queue ,@Qualifier("ttlExchange") Exchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with("ttl").noargs();
     }
 
 

@@ -4,14 +4,18 @@ import com.rabbit.rabbitextensiondemo.config.RabbitMQConfig;
 import com.rabbit.rabbitextensiondemo.constant.Constants;
 import jakarta.annotation.Resource;
 import org.jspecify.annotations.Nullable;
+import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageDeliveryMode;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/producer")
@@ -58,7 +62,49 @@ public class ProducerController {
 
     @RequestMapping("/retry")
     public String retry() {
+        System.out.println("retry...");
         rabbitTemplate.convertAndSend(Constants.RETRY_EXCHANGE,"retry","retry test...");
+        return "消息发送成功";
+    }
+
+    @RequestMapping("/ttl")
+    public String ttl() {
+        System.out.println("ttl...");
+        //设置消息的TTL
+//        MessagePostProcessor messagePostProcessor = new MessagePostProcessor() {
+//            @Override
+//            public Message postProcessMessage(Message message) throws AmqpException {
+//                message.getMessageProperties().setExpiration("10000");
+//                return message;
+//            }
+//        };
+//        rabbitTemplate.convertAndSend(Constants.TTL_EXCHANGE,"ttl","ttl test...",messagePostProcessor);
+
+        rabbitTemplate.convertAndSend(Constants.TTL_EXCHANGE, "ttl", "ttl test...",
+                message -> {
+                    message.getMessageProperties().setExpiration("10000"); //单位ms,过期时间10s
+                    return message;
+                });
+        return "消息发送成功";
+    }
+
+    @RequestMapping("/ttl2")
+    public String ttl2() {
+        System.out.println("ttl2.....");
+        rabbitTemplate.convertAndSend(Constants.TTL_EXCHANGE,"ttl","ttl2 test....");
+        return "消息发送成功";
+    }
+
+    @RequestMapping("/dl")
+    public String dl() {
+        System.out.println("dl...");
+        //发送普通消息
+        rabbitTemplate.convertAndSend(Constants.NORMAL_EXCHANGE, "normal", "dl test...");
+        System.out.printf("%tc 消息发送成功 \n", new Date());
+//        //测试队列长度
+//        for (int i = 0; i < 20; i++) {
+//            rabbitTemplate.convertAndSend(Constants.NORMAL_EXCHANGE, "normal", "dl test..."+i);
+//        }
         return "消息发送成功";
     }
 

@@ -45,5 +45,4 @@ public class RabbitTemplateConfig {
         });
         return rabbitTemplate;
     }
-
 }
