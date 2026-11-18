@@ -168,4 +168,16 @@ public class ProducerController {
         transRabbitTemplate.convertAndSend("",Constants.TRANS_QUEUE, "trans test 2...");
         return "消息发送成功";
     }
+
+
+    @RequestMapping("/qos")
+    public String Qos() {
+        System.out.println("qos test...");
+
+        for (int i = 0; i < 20; i++) {
+            rabbitTemplate.convertAndSend(Constants.QOS_EXCHANGE, "qos", "qos test..."+i);
+        }
+        return "消息发送成功";
+
+    }
 }
