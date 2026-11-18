@@ -108,4 +108,50 @@ public class ProducerController {
         return "消息发送成功";
     }
 
+
+    /**
+     * 延迟队列
+     *  通过TTL+死信队列
+     *  1.设置队列的TTL
+     *  2.设置消息的TTL
+     *
+     * */
+    @RequestMapping("/delay")
+    public String delay() {
+        System.out.println("delay...");
+
+        rabbitTemplate.convertAndSend(Constants.NORMAL_EXCHANGE, "normal", "ttl test 10s...", message -> {
+            message.getMessageProperties().setExpiration("10000");  //单位: 毫秒, 过期时间为10s
+            return message;
+        });
+
+        rabbitTemplate.convertAndSend(Constants.NORMAL_EXCHANGE, "normal", "ttl test 30s...", message -> {
+            message.getMessageProperties().setExpiration("30000");  //单位: 毫秒, 过期时间为30s
+            return message;
+        });
+
+        System.out.printf("%tc 消息发送成功 \n", new Date());
+        return "消息发送成功";
+    }
+
+    /**
+     * 延迟插件的使用
+     * */
+    @RequestMapping("/delay2")
+    public String delay2() {
+        System.out.println("delay2...");
+
+        rabbitTemplate.convertAndSend(Constants.DELAY_EXCHANGE, "delay", "delay test 30s...", message -> {
+            message.getMessageProperties().setDelayLong(30000L);  //单位: 毫秒, 过期时间为30s
+            return message;
+        });
+        rabbitTemplate.convertAndSend(Constants.DELAY_EXCHANGE, "delay", "delay test 10s...", message -> {
+            message.getMessageProperties().setDelayLong(10000L);  //单位: 毫秒, 延迟时间为10s
+            return message;
+        });
+
+        System.out.printf("%tc 消息发送成功 \n", new Date());
+        return "消息发送成功";
+    }
+
 }

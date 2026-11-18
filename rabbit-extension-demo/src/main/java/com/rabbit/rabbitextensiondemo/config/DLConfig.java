@@ -12,15 +12,24 @@ import org.springframework.context.annotation.Configuration;
 public class DLConfig {
 
     //正常交换机和队列
+//    @Bean("normalQueue")
+//    public Queue normalQueue() {
+//        return QueueBuilder.durable(Constants.NORMAL_QUEUE)
+//                .deadLetterExchange(Constants.DL_EXCHANGE)
+//                .deadLetterRoutingKey("dlx")
+//                .ttl(10000)   //给给正常队列设置过期时间,如果超过过期时间内没有被处理就进入死信队列当中
+//                .maxLength(10L)
+//                .build();
+//    }
+
     @Bean("normalQueue")
     public Queue normalQueue() {
         return QueueBuilder.durable(Constants.NORMAL_QUEUE)
                 .deadLetterExchange(Constants.DL_EXCHANGE)
                 .deadLetterRoutingKey("dlx")
-                .ttl(10000)   //给给正常队列设置过期时间,如果超过过期时间内没有被处理就进入死信队列当中
-                .maxLength(10L)
                 .build();
     }
+
     @Bean("normalExchange")
     public Exchange normalExchange() {
         return ExchangeBuilder.directExchange(Constants.NORMAL_EXCHANGE).build();
